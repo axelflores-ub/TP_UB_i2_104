@@ -1,0 +1,17 @@
+a- ¿Cómo actualizo mi repositorio, al estado que esté el repo que hice FORK?
+- Con un git pull apuntando a la URL del repositorio y rama forkeada.
+
+
+b- ¿Puede ALFA actualizar su FORK al estado del fork de GAMMA?
+- No tenemos a GAMMA pero teóricamente si es posible, siempre y cuando se agregue como remoto.
+
+
+c- ¿Puede GAMMA actualizar su FORK al estado del fork de ALFA?
+- No tenemos a GAMMA pero teóricamente si es posible, siempre y cuando se agregue como remoto.
+
+
+d- ¿Los datos que tenía en mi repositorio, editados por mi, se pierden si quiero actualizar el fork?
+
+
+
+e- Realizar un listado, paso a paso, de los comandos necesarios para resolver este TP por orden de ejecución de los mismos junto con los apellidos y nombre de los alumnos.
