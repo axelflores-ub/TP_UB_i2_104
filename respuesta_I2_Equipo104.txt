@@ -11,7 +11,41 @@ c- ¿Puede GAMMA actualizar su FORK al estado del fork de ALFA?
 
 
 d- ¿Los datos que tenía en mi repositorio, editados por mi, se pierden si quiero actualizar el fork?
-
+Depende, si generan conflicto porque estan ocupando la misma en la linea en el mismo archivo habra que decidir que version queremos. 
 
 
 e- Realizar un listado, paso a paso, de los comandos necesarios para resolver este TP por orden de ejecución de los mismos junto con los apellidos y nombre de los alumnos.
+
+Jesús (BETA) crea el repositorio en GitHub, lo clona y sube el archivo inicial fork.txt.
+
+git clone [URL] -> git add . -> git commit -m -> git push origin main
+
+Axel (ALFA) hace el Fork en GitHub, lo clona en su PC y agrega sus datos en fork.txt.
+
+git clone [URL_ALFA] -> git remote add upstream [URL_BETA]
+
+git add . -> git commit -m  -> git push origin main
+
+Jesús (BETA) crea el archivo NuevoDato.txt y lo sube al repo principal.
+
+git add . -> git commit -m  -> git push origin main
+
+Axel (ALFA) sincroniza su repositorio para recibir lo que hizo Jesús.
+
+git pull upstream main
+
+Axel (ALFA) crea la rama ajuste-alfa, edita la línea 2 de fork.txt con la hora y sube el cambio.
+
+git checkout -b ajuste-alfa -> git add . -> git commit -m  -> git push origin ajuste-alfa
+
+Jesús (BETA) edita esa misma línea 2 en su PC con la fecha y la sube para generar el choque de versiones.
+
+git add . -> git commit -m  -> git push origin main
+
+Axel (ALFA) intenta traer los cambios de Jesús a su rama y resuelve el conflicto.
+
+git pull upstream main -> (Edita el archivo para limpiar el conflicto) -> git add . -> git commit -m -> git push origin ajuste-alfa
+
+ALFA Y BETA completan el archivo final respuesta_I2_Equipo105.txt con las respuestas.
+
+git pull -> git add . -> git commit -> git push
